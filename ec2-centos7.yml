@@ -11,4 +11,4 @@
           vpc_subnet_id: subnet-c10697bb
           assign_public_ip: yes
           group: default
-          key_name: mac
+          key_name: mykey
