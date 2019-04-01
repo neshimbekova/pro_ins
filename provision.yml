@@ -6,7 +6,7 @@
         ec2_group:
           name: ansible-tower
           description: ansible-tower security group
-          vpc_id: vpc-1d063575
+          vpc_id: vpc-da9c97b2
           region: us-east-2
           rules:
             - proto: tcp
