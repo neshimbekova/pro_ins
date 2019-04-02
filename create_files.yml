@@ -1,11 +1,10 @@
 ---
-- name: find files older then 90 days
-  find:
-    paths: /tmp
-    age: 90d
-    recurse: yes
-- name: Compress files
-  archive:
-    path: "{{found.files|map(attribute='path')|list}}"
-    format: gz
-    dest: "/tmp/file{{ansible_date_time.date}}.90daysold.tgz"
+- name: create files 90 days old and larger than 2G
+  hosts: all
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: create a file that is larger than 2GB
+      shell: dd if=/dev/urandom of=/tmp/file.txt bs=2200000 count=1000
+    - name: create five files with a custom date
+      shell: touch -d 20180501  /tmp/file{1..5}
