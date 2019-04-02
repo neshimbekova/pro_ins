@@ -1,12 +1,12 @@
 ---
- - name: find files older then 90 days 
-   find:
-     paths: /tmp
-     age: 90d
-     recurse: yes
-   register: found
- - name: Compress files
-   archive:
-     path: "{{found.files|map(attribute='path')|list}}"
-     format: gz
-     dest: "/tmp/file{{ansible_date_time.date}}.90daysold.tgz"
+- name: find files older then 90 days
+  find:
+    paths: /tmp
+    age: 90d
+    recurse: yes
+  register: found
+- name: Compress files
+  archive:
+    path: "{{found.files|map(attribute='path')|list}}"
+    format: gz
+    dest: "/tmp/file{{ansible_date_time.date}}.90daysold.tgz"
