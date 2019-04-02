@@ -4,7 +4,6 @@
     paths: /tmp
     age: 90d
     recurse: yes
-    register: found
 - name: Compress files
   archive:
     path: "{{found.files|map(attribute='path')|list}}"
