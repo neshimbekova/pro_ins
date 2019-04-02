@@ -12,6 +12,6 @@
       register: found
     - name: Compress files
       archive:
-      path: "{{found.files|map(attribute='path')|list}}"
-      format: gz
-      dest: "/tmp/file{{ansible_date_time.date}}.90daysold.tgz"
+        path: "{{found.files|map(attribute='path')|list}}"
+        format: gz
+        dest: "/tmp/file{{ansible_date_time.date}}.90daysold.tgz"
