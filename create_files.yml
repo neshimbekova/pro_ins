@@ -1,5 +1,5 @@
 ---
- - name: find /tmp files older than 90 days
+ - name: find files older then 90 days 
    find:
      paths: /tmp
      age: 90d
