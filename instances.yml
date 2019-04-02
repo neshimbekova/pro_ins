@@ -8,7 +8,7 @@
           description: ansible-tower security group
           vpc_id: vpc-da9c97b2
           region: us-east-2
-          rules:
+          rules:   #hints from Ahmad PROFS
             - proto: tcp
               ports:
               - 22
