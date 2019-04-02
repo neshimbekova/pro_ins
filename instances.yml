@@ -62,7 +62,7 @@
             Name: Debian GNU-Linux 9
           count: 1
           wait: yes
-          vpc_subnet_id: subnet-410c643b
+          vpc_subnet_id: subnet-1626f65a
           assign_public_ip: yes
           user_data: |
                      #!/bin/sh
