@@ -6,7 +6,7 @@
         when: ansible_distribution == "CentOS"
         yum:
           name: vim
-          state: present 
+          state: present
       - name: install vim Ubuntu, Debian
         when: ansible_os_family == "Debian"
         apt:
