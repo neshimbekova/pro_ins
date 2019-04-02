@@ -1,10 +1,10 @@
 ---
   - name: find /tmp files older than 90 days
-  find:
-    paths: /tmp
-    age: 90d
-    recurse: yes
-  register: found
+    find:
+      paths: /tmp
+      age: 90d
+      recurse: yes
+    register: found
   - name: Compress files
     archive:
       path: "{{found.files|map(attribute='path')|list}}"
