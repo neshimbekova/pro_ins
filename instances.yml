@@ -1,4 +1,22 @@
 ---
+  - name: Provision EC2 Instance
+    hosts: localhost
+    tasks:
+      - name: EC2 Security Group
+        ec2_group:
+          name: ansible-tower
+          description: ansible-tower security group
+          vpc_id: vpc-da9c97b2
+          region: us-east-2
+          rules:
+            - proto: tcp
+              ports:
+              - 22
+              - 80
+              - 3389
+              cidr_ip: 0.0.0.0/0
+
+
   - name: Provision Centos7
     hosts: localhost
     tasks:
@@ -14,6 +32,8 @@
           vpc_subnet_id: subnet-410c643b
           assign_public_ip: yes
           key_name: mykey
+
+
 
       - name: Launch Ubuntu-16.04
         ec2:
