@@ -9,8 +9,11 @@
         name: "{{hostname}}"
 
     - name: confirm kernel version
-      shell: uname -a
-      register: kernel_version
+      vars:
+        kernel_version: "{{kernel}}"
+          debug: msg="{{kernel}}"
+      # shell: uname -a
+      # register: kernel_version
 
     - name: update system
       yum:
