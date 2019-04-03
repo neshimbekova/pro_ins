@@ -1,7 +1,7 @@
 ---
 - name: patching kernel
-  hosts: all
-  beecome: yes
+  hosts: localhost
+  become: yes
   become_method: sudo
   tasks:
     - name: get the hostname
