@@ -14,32 +14,18 @@
       register: kernel_version
     - debug: var=kernel_version.stdout
 
+
+    - name: Add repository
+      yum_repository:
+        name: epel
+        description: EPEL YUM repo
+        baseurl: http://mirror.centos.org/centos/7/os/x86_64/Packages/abrt-addon-kerneloops-2.1.11-52.el7.centos.x86_64.rpm
+
     - name: update system
       yum:
         name: "*"
         state: latest
 
-    - name: download kernel
-      get_url:
-        url: https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-5.0.6.tar.xz
-        dest: /tmp/linux-{{kernel_ver}}.tar.xz
-
-    - name: untar kernel
-      shell: tar -Jxvf linux-{{kernel_ver}}.tar.xz
-      args:
-        chdir: /tmp/
-
-
-    - name: install kernel
-      shell: "{{ item }}"
-      with_items:
-      - make silentoldconfig .config
-      - make
-      - make modules
-      - make modules_install
-      - make install
-      args:
-        chdir: /tmp/linux-{{kernel_ver}}/
 
 
     - name: restart machine
