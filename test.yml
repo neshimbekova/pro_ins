@@ -15,10 +15,12 @@
     - debug: var=kernel_version.stdout
 
 
-    - name: install epel-release
-      yum:
-        name: epel-release
-        state: latest
+    # - name: install epel-release
+    #   yum:
+    #     name: epel-release
+    #     state: latest
+      - name: isntall epel-release
+        shell: yum install epel-release -y
 
     - name: update system
       yum:
