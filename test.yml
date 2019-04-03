@@ -4,7 +4,8 @@
   beecome: yes
   become_method: sudo
   tasks:
-    - hostname:
+    - name: get the hostname
+      hostname:
       name: "{{hostname}}"
 
     - name: Collect only facts returned by facter
