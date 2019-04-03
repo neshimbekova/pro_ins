@@ -6,7 +6,7 @@
   tasks:
     - name: get the hostname
       hostname:
-      name: "{{hostname}}"
+        name: "{{hostname}}"
 
     - name: confirm kernel version
       shell: uname -a
