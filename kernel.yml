@@ -1,6 +1,6 @@
 ---
 - name:
-  hosts: 3.19.62.56
+  hosts: "{{hostname}}"
   become: yes
   become_method: sudo
   tasks:
