@@ -18,8 +18,7 @@
       yum:
         name: "*"
         state: latest
-
-     - name: download kernel
+    - name: download kernel
        get_url:
          url: https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.23.tar.xz
          dest: /tmp/linux-{{ kernel_ver }}.tar.xz
