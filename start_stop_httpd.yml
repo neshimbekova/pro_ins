@@ -1,0 +1,11 @@
+---
+- name: Start service httpd
+  hosts: all
+  service:
+    name: httpd
+    state: started
+
+- name: Stop services httpd
+  service:
+    name: httpd
+    state: stopped
