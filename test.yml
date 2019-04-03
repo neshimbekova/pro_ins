@@ -8,12 +8,9 @@
       hostname:
       name: "{{hostname}}"
 
-    - name: Collect only facts returned by facter
-      setup:
-      gather_subset:
-        - '!hardware'
-        - '!any'
-        - facter
+    - name: confirm kernel version
+      shell: uname -a
+      register: kernel_version
 
     - name: update system
       yum:
