@@ -4,10 +4,7 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: get the hostname
-      hostname:
-        name: "{{hostname}}"
-
+  
     - name: confirm kernel version
       # vars:
       #   kernel_version: "{{kernel}}"
