@@ -11,8 +11,8 @@
     - name: confirm kernel version
       vars:
         kernel_version: "{{kernel}}"
-      register: current_kernel
-    - debug: msg="{{ current_kernel.kernel }}"
+        register: current_kernel
+      - debug: msg="{{ current_kernel.kernel }}"
       # shell: uname -a
       # register: kernel_version
 
