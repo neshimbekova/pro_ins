@@ -1,0 +1,18 @@
+---
+- name: patching kernel
+  hosts: all
+  beecome: yes
+  become_method: sudo
+  tasks:
+    - hostname:
+      name: "{{hostname}}"
+
+    - name: Collect only facts returned by facter
+      setup:
+      gather_subset:
+      - hardware
+
+    - name: update system
+      yum:
+        name: "*"
+        state: latest
