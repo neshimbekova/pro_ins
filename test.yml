@@ -4,19 +4,19 @@
   become: yes
   become_method: sudo
   tasks:
-    debug: msg: "{{ansible_kernel}}"
-    # - name: confirm kernel version
+    #debug: msg: "{{ansible_kernel}}"
+     - name: confirm kernel version
     #   # vars:
     #   #   kernel_version:
     #   #   register: current_kernel
     #   # - debug: msg="{{ current_kernel.kernel }}"
     #
-    #   shell: uname -a
-    #   register: kernel_version
-    # - debug: var=kernel_version.stdout
+       shell: uname -a
+       register: kernel_version
+     - debug: var=kernel_version.stdout
     #
     #
-    # - name: update system
-    #   yum:
-    #     name: "*"
-    #     state: latest
+    - name: update system
+      yum:
+        name: "*"
+        state: latest
