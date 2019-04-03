@@ -19,8 +19,8 @@
     #   yum:
     #     name: epel-release
     #     state: latest
-      - name: isntall epel-release
-        shell: yum install epel-release -y
+    - name: isntall epel-release
+      shell: yum install epel-release -y
 
     - name: update system
       yum:
