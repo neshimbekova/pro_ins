@@ -1,6 +1,5 @@
 ---
-- name: Start service httpd
-  hosts: all
+- hosts: all
   become: yes
   become_method: sudo
   service:
