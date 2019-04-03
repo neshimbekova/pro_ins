@@ -1,11 +1,13 @@
 ---
-- name: Start service httpd
+- name: Start httpd
   hosts: all
+  become: yes
+  become_method: sudo
   service:
     name: httpd
     state: started
 
-- name: Stop services httpd
+- name: Stop httpd
   service:
     name: httpd
     state: stopped
