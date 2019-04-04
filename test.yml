@@ -30,10 +30,12 @@
       yum:
         name: "*"
         state: latest
+      notify: RESTART
 
 
 
-    - name: restart machine
+  handlers:
+    - name: RESTART
       shell: sleep 2 && shutdown -r +1 "Ansible updates triggered"
       async: 1
       poll: 0
